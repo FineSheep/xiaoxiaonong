@@ -1,0 +1,90 @@
+<template name="storeHome">
+    <view data-id="1" class="store_bar" bindtap="showPageContainer">
+        <view class="store_name">
+            {{storeName}}
+        </view>
+        <block wx:for="{{store_bar_tip}}" wx:key="index" wx:for-item="store_bar_tip">
+            <view class="store_bar_tip">
+                <image src="{{store_bar_tip.miniIcon}}"></image>
+                {{store_bar_tip.tip}}
+            </view>
+        </block>
+        <view class="store_bar_notice">{{store_notice}}</view>
+        <image src="{{shootSrc}}"></image>
+    </view>
+    <view class="store_content">
+        <view data-id="2" bindtap="showPageContainer" class="store_discount">
+            <block wx:for="{{discount.tip}}" wx:key="index">
+                <view class="discount_tip">
+                    {{item}}
+                </view>
+
+            </block>
+            <view class="discount_num">
+                {{discount.detail.length}}个优惠 >
+            </view>
+        </view>
+        <view bindtap="toCommandDetail" class="store_command">
+            <view class="store_command_point">
+                {{store_command.point}}
+            </view>
+            <view class="store_command_top1">
+                {{store_command.top1}}
+            </view>
+            <block wx:for="{{sort}}" wx:key="index">
+                <view class="store_command_sort">
+                    {{item.sortName+" "+item.sortNum}}
+                </view>
+            </block>
+            <view class="store_command_icon">
+                >
+            </view>
+        </view>
+        <view class="store_nav">
+            <block wx:for="{{store_nav_list}}" wx:key="index">
+                <view data-index="{{index}}" bindtap="storeNavChoose" class="store_nav_item">
+                    <image src="{{item.src}}"></image>
+                    <text>{{item.tip}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="store_goods">
+            <view class="store_goods_left">
+                <block wx:for="{{goodsList}}" wx:key="index">
+                    <view data-index="{{index}}" bindtap="chooseGoodsLeftItem"
+                        class="store_goods_left_item {{item.active?'store_goods_item_active':''}}">
+                        {{item.type}}
+                    </view>
+                </block>
+            </view>
+            <view class="store_goods_right">
+                <block wx:for="{{showGoodsList}}" wx:key="index">
+                    <view class="store_goods_right_item" data-index="{{index}}" bindtouchmove="spyGoodsRightItemOffset">
+                        <view class="goods_sort_title">
+                            {{item.type}}
+                        </view>
+                        <block wx:for="{{item.goods}}" wx:key="index" wx:for-item="goods">
+                            <view class="goods_sort_content">
+                                <image src="{{goods.src}}"></image>
+                                <view class="goods_sort_content_name">
+                                    {{goods.name}}
+                                </view>
+                                <view class="goods_sort_content_tip">
+                                    {{'月售'+goods.salePerMonth}}|{{'好评率'+goods.highPoint+'%'}}
+                                </view>
+                                <view class="goods_sort_content_price">
+                                    {{goods.price}}
+                                </view>
+                                <view data-goods="{{goods}}" bindtap="addGoodsToCart" class="goods_add_to_cart">
+                                    +
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="check_shopping_cart" bindtap="checkShoppingCart">购物车</view>
+    </view>
+   <view class="fill_bottom"></view>
+</template>

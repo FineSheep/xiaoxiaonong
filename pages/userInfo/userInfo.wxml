@@ -1,0 +1,32 @@
+<!--miniprogram/pages/userInfo/userInfo.wxml-->
+<view bindtap="chooseHeadShoot" hover-class="hove" hover-stay-time="250" class="user_info_item">
+    <view class="user_info_left">头像</view>
+    <image src="{{userInfo.avatarUrl ||'../../images/user_headshoot_init.png'}}"></image>
+    <view class="user_info_right_icon">></view>
+</view>
+<view bindtap="" hover-class="hove" hover-stay-time="250" class="user_info_item">
+    <view class="user_info_left">昵称</view>
+    <view class="user_info_right">{{userInfo.nickName || '***'}}</view>
+    <view class="user_info_right_icon">></view>
+</view>
+<view bindtap="" hover-class="hove" hover-stay-time="250" class="user_info_item">
+    <view class="user_info_left">性别</view>
+    <view class="user_info_right">{{userInfo.gender==1?'男':(userInfo.gender==2?'女':'未知')}}</view>
+    <view class="user_info_right_icon">></view>
+</view>
+<view bindtap="" hover-class="hove" hover-stay-time="250" class="user_info_item">
+    <view class="user_info_left">年龄</view>
+    <view class="user_info_right">{{userInfo.age || '永远18'}}</view>
+    <view class="user_info_right_icon">></view>
+</view>
+<view bindtap="" hover-class="hove" hover-stay-time="250" class="user_info_item">
+    <view class="user_info_left">手机</view>
+    <view class="user_info_right">{{userInfo.phoneNum || '无'}}</view>
+    <view class="user_info_right_icon">></view>
+</view>
+<view bindtap="" hover-class="hove" hover-stay-time="250" class="user_info_item">
+    <view class="user_info_left">地区</view>
+    <view class="user_info_right">{{userInfo.area || '无'}}</view>
+    <view class="user_info_right_icon">></view>
+</view>
+<button class="log_out" type="default" bindtap="logOut">退出登录</button>

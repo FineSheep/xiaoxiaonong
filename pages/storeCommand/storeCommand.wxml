@@ -1,0 +1,27 @@
+<!--miniprogram/pages/storeCommand/storeCommand.wxml-->
+<view class="command_bar">
+    <view class="command_bar_point">
+        {{commandPoint.point}}
+    </view>
+    <view class="">
+        <text>质量</text>
+        {{commandPoint.qualityPoint}}
+    </view>
+    <view class="">
+        <text>包装</text>
+        {{commandPoint.packingPoint}}
+    </view>
+    <view class="">
+        <text>配送满意度</text>
+        {{commandPoint.deliveryPoint+"%"}}
+    </view>
+</view>
+
+<view class="command_sort">
+    <block wx:for="{{commandSort}}" wx:key="index">
+        <view data-index="{{index}}" bindtap="command_item_active" class="command_item {{item.active?'command_item_active':''}}">
+            {{item.sortName+' '+item.sortNum}}
+        </view>
+    </block>
+</view>
+<no-data></no-data>

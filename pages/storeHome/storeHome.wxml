@@ -1,0 +1,57 @@
+<!--miniprogram/pages/storeHome/storeHome.wxml-->
+<block wx:if="{{hasNetwork}}">
+    <import src="../../templates/storeHome.wxml"></import>
+    <template is="storeHome" data="{{...storeData,sort,store_nav_list,showGoodsList:showGoodsList}}"></template>
+</block>
+<block wx:else>
+    <no-data></no-data>
+</block>
+
+
+
+<page-container data-id="1" wx:if='{{page1}}' bindenter="page1Enter" bindclickoverlay="showPageContainer"
+    show="{{isShow1}}" round overlay-style="background-color:rgba(0,0,0,0.1);z-index:10"
+    custom-style="width:100%;height:60vh;overflow-y:scroll;z-index:20;" position="bottom" duration="500">
+    <view class="store_service_top">
+        <view class="store_service_title">商家服务</view>
+        <view data-id="1" bindtap="showPageContainer" class="store_service_close">
+            ×
+        </view>
+    </view>
+    <view style="height:100rpx"></view>
+    <block wx:for="{{storeData.store_service}}" wx:key="index">
+        <view class="service_item">
+            <image src="{{item.miniIcon}}"></image>
+            <view class="service_item_tip">
+                {{item.tip}}
+            </view>
+            <view class="service_item_text">
+                {{item.text}}
+            </view>
+        </view>
+    </block>
+    <view class="store_service_notice">
+        {{storeData.store_notice}}
+    </view>
+</page-container>
+<page-container data-id="2" bindenter="page2Enter" wx:if="{{page2}}" bindclickoverlay="showPageContainer"
+    show="{{isShow2}}" round overlay-style="background-color:rgba(0,0,0,0.1);z-index:10;"
+    custom-style="width:100%;height:80vh;overflow-y:scroll;z-index:20;" position="bottom" duration="500">
+    <view class="store_service_top">
+        <view class="store_service_title">店铺优惠</view>
+        <view data-id="2" bindtap="showPageContainer" class="store_service_close">
+            ×
+        </view>
+    </view>
+    <view style="height:100rpx"></view>
+    <block wx:for="{{storeData.discount.detail}}" wx:key="index">
+        <view class="detail_item">
+            <view class="detail_item_type">
+                {{item.type}}
+            </view>
+            <view class="detail_item_text">
+                {{item.text}}
+            </view>
+        </view>
+    </block>
+</page-container>

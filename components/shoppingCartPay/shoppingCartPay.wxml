@@ -1,0 +1,5 @@
+<!--components/shoppingCartPay/shoppingCartPay.wxml-->
+<view class="pay">
+    <image src="../../images/pay_test_icon.png"></image>
+    <view class="tip">没钱就别乱点</view>
+</view>

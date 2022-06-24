@@ -1,0 +1,18 @@
+<template name="nearStoreList">
+    <block wx:for="{{storeList}}" wx:key="index">
+        <view data-store="{{item}}" bindtap="goStoreHome" class="store_item" hover-stay-time="250" hover-class="store_item_hover">
+            <image src="{{item.shootSrc}}"></image>
+            <view class="store_name">
+                {{item.storeName}}
+            </view>
+            <view class="store_distance">
+                {{item.distance}}
+            </view>
+            <block wx:for="{{item.tabs}}" wx:key="index" wx:for-item="tabs">
+                <view class="store_tab">
+                    {{tabs}}
+                </view>
+            </block>
+        </view>
+    </block>
+</template>

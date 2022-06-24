@@ -1,0 +1,32 @@
+<!--miniprogram/pages/personalCenter/personalCenter.wxml-->
+<view class="personal_top">
+    <view class="personal_top_item">
+        <image bindtap="updateUserHeadShoot" class="personal_top_headshoot" src="{{userInfo.avatarUrl}}"></image>
+        <view bindtap="userInfoEdit" class="user_name">{{userInfo.nickName}}</view>
+        <image bindtap="userInfoEdit" class="personal_info_edit" src="../../images/personal_info_edit.png"></image>
+        <view class="user_type">{{userType}}</view>
+    </view>
+</view>
+<view bindtap="noData" class="order_item">
+    <view class="order_item_top">
+        <text>所有订单</text>
+        <text class="all_order">全部>></text>
+    </view>
+    <view class="order_item_bottom">
+        <block wx:for="{{order_func_list}}" wx:key="index">
+            <view class="order_func_item">
+                <image src="{{item.src}}"></image>
+                <text>{{item.tip}}</text>
+            </view>
+        </block>
+    </view>
+</view>
+<view bindtap="noData" class="func_can">
+    <block wx:for="{{personal_func_area_list}}" wx:key="index">
+        <view class="func_can_item" hover-class="func_can_item_hover" hover-stay-time="250">
+            <image src="{{item.src}}"></image>
+            <text>{{item.tip}}</text>
+        </view>
+    </block>
+
+</view>

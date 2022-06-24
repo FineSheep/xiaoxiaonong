@@ -1,0 +1,11 @@
+/* components/noData/noData.wxss */
+.no_data{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.no_data image{
+    width: 40%;
+    height: 300rpx;
+}

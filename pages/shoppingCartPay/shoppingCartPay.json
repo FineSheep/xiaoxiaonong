@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "pay-test":"../../components/shoppingCartPay/shoppingCartPay"
+  }
+}

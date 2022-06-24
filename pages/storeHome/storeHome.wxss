@@ -1,0 +1,2 @@
+/* miniprogram/pages/storeHome/storeHome.wxss */
+@import '../../templates/storeHome.wxss'

@@ -1,0 +1,101 @@
+/* miniprogram/pages/aside/aside.wxss */
+page{
+    background-color: rgba(122, 101, 101, 0.048);
+}
+
+.home_search{
+    width: 85%;
+    height: 60rpx;
+    padding-top: 15rpx;
+    padding-left: 30rpx;
+    border: 5rpx solid #6495ED;
+    border-radius: 40rpx;
+    margin: 10rpx auto;
+    background-color: white;
+
+}
+.home_search image{
+    width: 50rpx;
+    height: 50rpx;
+    float: left;
+    
+}
+.home_search input{
+    width: 80%;
+    float: left;
+    margin-left: 20rpx;
+    padding-left: 10rpx;
+    letter-spacing: 5rpx;
+    border-left: 5rpx solid #6495ED;
+    color: #6495ED;
+    
+}
+.home_search_placeholder{
+    color: #6495ED;
+    font-weight: lighter;
+    font-size: small;
+    
+}
+.store_item{
+    width: 90%;
+    height:200rpx;
+    border: 1rpx solid #6495ED;
+    margin: 10rpx auto;
+    border-radius: 20rpx;
+    position: relative;
+    letter-spacing: 2rpx;
+    overflow: hidden;
+    background-color: white;
+    color: #6495ED;
+}
+.store_item_hover{
+    background-color: rgba(0, 0, 0, 0.096);
+}
+.store_item image{
+    width: 120rpx;
+    height: 130rpx;
+    border-radius: 20rpx;
+    position: absolute;
+    top:35rpx;
+    left: 20rpx;
+}
+
+
+.store_name{
+    width: 165px;
+    height: 42px;
+    position: absolute;
+    top:35rpx;
+    left: 170rpx;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    /* text-overflow: ellipsis; */
+}
+.store_distance{
+    width: 75px;
+    position: absolute;
+    top: 35rpx;
+    right: 20rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: right;
+
+}
+.store_distance::after{
+    content: 'km';
+}
+.store_tab{
+    display: inline-block;
+    padding: 5rpx;
+    border: 1rpx solid #6495ED;
+    position: relative;
+    top: 120rpx;
+    left: 170rpx;
+    font-size: small;
+    border-radius: 0 15rpx;
+    margin-right: 10rpx;
+    background-color: #6495ED;
+    color:white;
+    font-weight: bolder;
+}

@@ -1,0 +1,46 @@
+<!--miniprogram/pages/shoppingCart/shoppingCart.wxml-->
+
+<view class="cart_top">
+    <text class="cart_top_fruit_num">水果宝贝</text>
+    <text style="letter-space:3rpx;" bindtap="changeCartManager">管理</text>
+</view>
+
+<block wx:for="{{cart_lists}}" wx:key="index">
+
+    <view class="cart_item">
+        <view class="cart_item_top">
+            <checkbox checked="{{item.allChecked}}" color="#FFA500" bindtap="selectAllGoods" data-index="{{index}}"
+                data-goods-lists="{{item.goodsLists}}"></checkbox>
+            <text data-store_id="{{item.store_id}}" bindtap="toStoreHome" class="cart_item_store_name">{{item.storeName}}</text>
+        </view>
+        <block wx:for="{{item.goodsLists}}" wx:key="index" wx:for-item="goods" wx:for-index="single">
+            <view class="cart_item_goods_list">
+                <checkbox data-index="{{index}}" data-single="{{single}}" bindtap="chooseSingleGood"
+                    checked="{{goods.checked}}" color="#FFA500"></checkbox>
+                <image src="{{goods.src}}"></image>
+                <view class="goods_name">{{goods.name}}</view>
+                <view class="goods_price">{{goods.price}}</view>
+                <view class="goods_num_item">
+                    <text data-index="{{index}}" data-single="{{single}}" bindtap="goodsNumReduce" data-goodid="{{goods.goodId}}">-</text>
+                    <view class="goods_num">{{goods.num}}</view>
+                    <text data-index="{{index}}" data-single="{{single}}" bindtap="goodsNumAdd" data-goodid="{{goods.goodId}}">+</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>
+<view class="cart_bottom">
+    <icon bindtap="selectAll" class="cart_bottom_selectAll" type="{{selectAll}}" color="#FFA500"></icon>
+    <label bindtap="selectAll">全选</label>
+    <view class="cart_bottom_right">
+   
+            <view hidden="{{!cartManager}}" class="delete_check" bindtap="deleteCheck">删除</view>
+
+     
+            <text hidden="{{cartManager}}">合计:<text class="allCount">{{selectedGoodsCount}}</text></text>
+        
+        <view bindtap="toPay" class="cart_bottom_pay">
+            结算{{selectedGoodsNum}}
+        </view>
+    </view>
+</view>

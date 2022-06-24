@@ -1,0 +1,45 @@
+/* miniprogram/pages/userInfo/userInfo.wxss */
+
+page{
+    background-color: rgba(122, 101, 101, 0.048);
+}
+.user_info_item{
+    padding:20rpx 30rpx;
+    border-bottom: 2rpx solid #ebe044;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+    background-color: white;
+}
+.user_info_item image{
+    width: 100rpx;
+    height: 100rpx;
+    border: 2rpx solid #ebe044;
+    border-radius: 50rpx;
+    position: relative;
+    left: 70%;
+
+}
+.user_info_left{
+   
+}
+.user_info_right{
+    position: absolute;
+    right: 65rpx;
+ 
+}
+.user_info_right_icon{
+    position: absolute;
+    right: 20rpx;
+    color: rgba(0, 0, 0, 0.479);
+  
+}
+.hove{
+    background-color: rgba(0, 0, 0, 0.199);
+}
+.log_out{
+    background-color: #ebe044 !important;
+    color: white !important;
+    font-weight: normal;
+    letter-spacing: 5rpx;
+}

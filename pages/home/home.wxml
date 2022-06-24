@@ -1,0 +1,28 @@
+<!--miniprogram/pages/home/home.wxml-->
+<!-- 顶部轮播图 -->
+<swiper class="home_top_swiper" indicator-dots indicator-active-color="#37af08" autoplay duration="1500" interval="4000" circular easing-function="easeInOutCubic">
+   <block wx:for="{{home_top_swiper_item_images_src}}" wx:key="index">
+       <swiper-item item-id="{{index}}">
+           <image src="{{item}}" class="home_top_swiper_item_image"></image>
+       </swiper-item>
+   </block>
+</swiper>
+<!-- 搜索框 -->
+<view class="home_search">
+    <image src="../../images/home_search.png"></image>
+    <input bindinput="onHomeSearch" type="text" placeholder="搜索" placeholder-class="home_search_placeholder" />
+</view>
+<!-- 中间部分网格功能区 -->
+<view bindtap="noData" class="func_can">
+    <block wx:for="{{home_func_area_list}}" wx:key="index">
+        <view class="func_can_item" hover-class="func_can_item_hover" hover-stay-time="250">
+            <image src="{{item.src}}"></image>
+            <text>{{item.tip}}</text>
+        </view>
+    </block>
+</view>
+<!-- 公告入口 -->
+<view class="home_notice">
+    <image src="../../images/home_notice_icon.png"></image>
+    <view class="home_notice_tip {{notice_tip_blink}}" hover-class="home_notice_tip_hover" hover-stay-time="250">{{notice_tip}}</view>
+</view>

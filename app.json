@@ -1,0 +1,58 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/aside/aside",
+        "pages/shoppingCart/shoppingCart",
+        "pages/personalCenter/personalCenter",
+        "pages/userInfo/userInfo",
+        "pages/storeHome/storeHome",
+        "pages/storeCommand/storeCommand",
+        "pages/shoppingCartPay/shoppingCartPay",
+        "pages/noData/noData",
+        "pages/list/list",
+        "pages/detail/detail"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#37af08",
+        "navigationBarTitleText": "Fruit City",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "iconPath": "images/home_tabBar_icon.png",
+                "selectedIconPath": "images/home_tabBar_icon_checked.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/aside/aside",
+                "iconPath": "images/aside_tabBar_icon.png",
+                "selectedIconPath": "images/aside_tabBar_icon_checked.png",
+                "text": "附近商家"
+            },
+            {
+                "pagePath": "pages/shoppingCart/shoppingCart",
+                "iconPath": "images/shoppingCart_tabBar_icon.png",
+                "selectedIconPath": "images/shoppingCart_tabBar_icon_checked.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/personalCenter/personalCenter",
+                "iconPath": "images/personal_center_tabBar_icon.png",
+                "selectedIconPath": "images/personal_center_tabBar_icon_checked.png",
+                "text": "个人中心"
+            }
+        ]
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "请允许小程序获取您当前的定位"
+        }
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+}

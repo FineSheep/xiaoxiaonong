@@ -1,0 +1,9 @@
+<!--miniprogram/pages/aside/aside.wxml-->
+<!-- <button type="primary" bindtap="chooseLocation">location</button> -->
+<view class="home_search">
+    <image src="../../images/near_store_search_icon.png"></image>
+    <input bindinput="onStoreSearch" type="text" placeholder="搜索商家" placeholder-class="home_search_placeholder" />
+</view>
+
+<import src='../../templates/nearStoreList.wxml'></import>
+<template is="nearStoreList" data="{{storeList}}"></template>

@@ -1,0 +1,4 @@
+<!--components/noData/noData.wxml-->
+<view class="no_data">
+    <image src="../../images/no_data_icon.png"></image>
+</view>
